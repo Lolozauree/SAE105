@@ -1,0 +1,184 @@
+/* réglages globaux */
+* {
+    box-sizing: border-box;
+}
+
+/* addition de variables pour simplifier les changements */
+:root {
+    --couleur-principale: #F3AF00;
+    --couleur-menu: #FBA304;
+    --couleur-secondaire: #FFF548;
+    --couleur-bg: #000000;
+    --couleur-blanc: white;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--couleur-bg);
+    background-image: url('../assets/img/backgrounds/background.png');
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Trebuchet', sans-serif;
+    cursor: url('../assets/img/cursors/default.cur') 16 16, default;
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+a,
+button,
+.clickable {
+    cursor: url('../assets/img/cursors/pointer.cur') 16 16, pointer;
+}
+
+/* réglages police d'écriture */
+@font-face {
+    font-family: 'Trebuchet';
+    src: url('../assets/fonts/trebuc.ttf');
+}
+
+/* corps / milieu de page */
+#content {
+    flex: 1;
+}
+
+/* en tête */
+.Header {
+    display: flex;
+    align-items: center;
+    color: var(--couleur-principale);
+    position: relative;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+#Logo {
+    max-width: 5rem;
+    max-height: 5rem;
+    margin-right: 0.5rem;
+}
+
+#Prenom {
+    margin-left: 1rem;
+    font-size: 3rem;
+    color: var(--couleur-blanc);
+}
+
+.Boutons {
+    display: flex;
+    gap: 5rem;
+    margin-left: auto;
+    font-size: 1.5rem;
+    align-items: center;
+}
+
+/* permet d'avoir un petit effet lorsqu'on survole avec la souris */
+#Accueil:hover,
+#Projets:hover,
+#Sae:hover {
+    color: var(--couleur-secondaire);
+    text-shadow: 0 0 0.625rem var(--couleur-secondaire);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* base saé */
+.SAE {
+    width: 300px;
+    height: 300px;
+    color: var(--couleur-menu);
+    background-color: rgba(43, 28, 7, 0.3);
+    background-image: repeating-linear-gradient(rgba(253, 160, 7, 0.2),
+            rgba(253, 160, 7, 0.2) 2px,
+            rgba(43, 28, 7, 0.2) 2px,
+            rgba(43, 28, 7, 0.2) 4px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 2px;
+    overflow: hidden;
+    padding: 20px;
+    box-shadow: 0 0 15px #2B1C07;
+}
+
+.SAEContent {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 32px 200px;
+    gap: 32px;
+    justify-content: center;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+.Competence {
+    background-color: var(--couleur-menu);
+    box-shadow: 0px 0px 7px 1px var(--couleur-menu);
+    color: #2B1C07;
+    border-radius: 100px;
+    padding: 1px 22px;
+    margin: 14px;
+}
+
+/* pied de page */
+footer {
+    color: var(--couleur-principale);
+    font-size: 14px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 15px;
+}
+
+.PiedGauche {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-left: 30px;
+}
+
+.PiedLiens {
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+}
+
+.LogoFooter {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-left: auto;
+    padding-right: 30px;
+}
+
+#Contacts {
+    margin: 0;
+}
+
+#GithubFooter,
+#LinkedinFooter {
+    fill: var(--couleur-principale);
+    width: 32px;
+    height: 32px;
+}
+
+#GithubFooter:hover,
+#LinkedinFooter:hover {
+    fill: var(--couleur-secondaire);
+    filter: drop-shadow(0 0 0.625rem var(--couleur-secondaire));
+    transition: color 0.3s ease, filter 0.3s ease;
+}

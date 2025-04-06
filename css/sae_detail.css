@@ -1,0 +1,228 @@
+/* réglages globaux */
+* {
+    box-sizing: border-box;
+}
+
+/* addition de variables pour simplifier les changements */
+:root {
+    --couleur-principale: #F3AF00;
+    --couleur-menu: #FBA304;
+    --couleur-secondaire: #FFF548;
+    --couleur-bg: #000000;
+    --couleur-blanc: white;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--couleur-bg);
+    background-image: url('../assets/img/backgrounds/background.png');
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Trebuchet', sans-serif;
+    cursor: url('../assets/img/cursors/default.cur') 16 16, default;
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+a,
+button,
+.clickable {
+    cursor: url('../assets/img/cursors/pointer.cur') 16 16, pointer;
+}
+
+/* réglages police d'écriture */
+@font-face {
+    font-family: 'Trebuchet';
+    src: url('../assets/fonts/trebuc.ttf');
+}
+
+/* corps / milieu de page */
+#content {
+    flex: 1;
+}
+
+/* en tête */
+.Header {
+    display: flex;
+    align-items: center;
+    color: var(--couleur-principale);
+    position: relative;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 3rem;
+}
+
+#Logo {
+    max-width: 5rem;
+    max-height: 5rem;
+    margin-right: 0.5rem;
+}
+
+#Prenom {
+    margin-left: 1rem;
+    font-size: 3rem;
+    color: var(--couleur-blanc);
+}
+
+.Boutons {
+    display: flex;
+    gap: 5rem;
+    margin-left: auto;
+    font-size: 1.5rem;
+    align-items: center;
+}
+
+/* permet d'avoir un petit effet lorsqu'on survole avec la souris */
+#Accueil:hover,
+#Projets:hover,
+#Sae:hover {
+    color: var(--couleur-secondaire);
+    text-shadow: 0 0 0.625rem var(--couleur-secondaire);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* presentation de la sae */
+.SAEDetail {
+    margin: 0px auto;
+    width: 80%;
+    max-width: 1200px;
+    background-color: rgba(43, 28, 7, 0.3);
+    background-image: repeating-linear-gradient(rgba(253, 160, 7, 0.2),
+            rgba(253, 160, 7, 0.2) 2px,
+            rgba(43, 28, 7, 0.2) 2px,
+            rgba(43, 28, 7, 0.2) 4px);
+    padding: 20px;
+    border-radius: 2px;
+    box-shadow: 0 0 15px #2B1C07;
+}
+
+.SAEDetail #sae-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--couleur-menu);
+    margin: 10px auto 60px auto;
+    max-width: 700px;
+    min-width: 400px;
+}
+
+.SAEDetail #sae-description {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--couleur-blanc);
+    line-height: 1.6;
+}
+
+.SAEDetail h2 {
+    font-size: 2rem;
+    color: var(--couleur-menu);
+    border-bottom: 2px solid var(--couleur-menu);
+    padding-bottom: 5px;
+}
+
+.SAEDetail #competences-list,
+.SAEDetail #ac-list,
+.SAEDetail #ressources-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.SAEDetail #competences-list p,
+.SAEDetail #ac-list p,
+.SAEDetail #ressources-list p {
+    background-color: var(--couleur-menu);
+    box-shadow: 0px 0px 7px 1px var(--couleur-menu);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.SAEDetail #semestre {
+    font-size: 1.2rem;
+    border-radius: 8px;
+    background-color: var(--couleur-menu);
+    box-shadow: 0px 0px 7px 1px var(--couleur-menu);
+    width: max-content;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+.haut {
+    display: flex;
+    align-items: center;
+}
+
+#Sortir {
+    fill: var(--couleur-menu);
+    width: 50px;
+    height: 50px;
+}
+
+#Sortir:hover {
+    fill: var(--couleur-secondaire);
+    filter: drop-shadow(0 0 0.625rem var(--couleur-secondaire));
+    transition: color 0.3s ease, filter 0.3s ease;
+}
+
+/* pied de page */
+footer {
+    color: var(--couleur-principale);
+    font-size: 14px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 15px;
+}
+
+.PiedGauche {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-left: 30px;
+}
+
+.PiedLiens {
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+}
+
+.LogoFooter {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-left: auto;
+    padding-right: 30px;
+}
+
+#Contacts {
+    margin: 0;
+}
+
+#GithubFooter,
+#LinkedinFooter {
+    fill: var(--couleur-principale);
+    width: 32px;
+    height: 32px;
+}
+
+#GithubFooter:hover,
+#LinkedinFooter:hover {
+    fill: var(--couleur-secondaire);
+    filter: drop-shadow(0 0 0.625rem var(--couleur-secondaire));
+    transition: color 0.3s ease, filter 0.3s ease;
+}
